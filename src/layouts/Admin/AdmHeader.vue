@@ -8,7 +8,7 @@
         <q-btn
           flat
           round
-          icon="segment"
+          icon="icon-mat-segment"
           @click="emit('toggleLeft')"
         />
       </div>

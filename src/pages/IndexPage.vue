@@ -1,6 +1,9 @@
 <template>
   <q-page class="q-pa-lg">
     <div>
+      <q-select
+        label="Standard"
+      />
       <p
         v-for="n in 15"
         :key="n"
