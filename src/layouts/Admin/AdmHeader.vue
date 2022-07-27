@@ -9,11 +9,12 @@
           flat
           round
           icon="icon-mat-segment"
+          class="flip__icon"
           @click="emit('toggleLeft')"
         />
       </div>
       <div class="q-pr-md">
-        <q-avatar>
+        <q-avatar size="40px">
           <img src="https://cdn.quasar.dev/img/avatar.png">
         </q-avatar>
       </div>
@@ -31,3 +32,9 @@ defineProps({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.flip__icon {
+  transform: scaleX(-1);
+}
+</style>

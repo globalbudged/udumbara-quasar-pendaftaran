@@ -7,7 +7,10 @@
       :dark="dark"
       @toggle-left="toggleLeftDrawer"
     />
-    <LeftDrawer v-model="leftDrawerOpen" />
+    <LeftDrawer
+      v-model="leftDrawerOpen"
+      :dark="dark"
+    />
     <q-drawer
       v-model="rightDrawerOpen"
       side="right"
