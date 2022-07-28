@@ -24,6 +24,24 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-page-sticky
+      position="bottom-right"
+      :offset="[18, 18]"
+    >
+      <q-fab
+        size="sm"
+        padding="sm"
+        icon="icon-mat-display_settings"
+        color="primary"
+        direction="up"
+      >
+        <q-fab-action
+          :color="dark?'warning':'dark'"
+          icon="icon-mat-tungsten"
+          @click="setDark(dark)"
+        />
+      </q-fab>
+    </q-page-sticky>
   </q-layout>
 </template>
 
@@ -44,7 +62,12 @@ const dark = computed(() => {
 
 console.log(dark)
 
-$q.dark.set(false)
+function setDark(val) {
+  const x = !val
+  $q.dark.set(x)
+}
+
+setDark(true)
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value

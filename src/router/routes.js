@@ -3,8 +3,11 @@ const routes = [
   {
     path: '/',
     component: () => import('layouts/Admin/AdminLayout.vue'),
+    meta: { requireAuth: true },
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', redirect: '/dashboard' },
+      { path: '/dashboard', name: 'dashboard', component: () => import('pages/IndexPage.vue') },
+      { path: '/pendaftaran', name: 'pendaftaran', component: () => import('pages/pendaftaran/IndexPage.vue') }
     ]
   },
 

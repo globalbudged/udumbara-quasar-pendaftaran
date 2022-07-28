@@ -1,9 +1,14 @@
 <template>
   <q-header
+    bordered
     reveal
     :class="dark?'bg-dark':'bg-white text-dark'"
   >
-    <div class="q-px-sm q-py-sm flex items-center justify-between">
+    <div
+      class="q-px-sm q-py-sm flex items-center justify-between"
+      style="height:60px"
+    >
+      <!-- LEFT -->
       <div>
         <q-btn
           flat
@@ -13,8 +18,16 @@
           @click="emit('toggleLeft')"
         />
       </div>
+      <!-- RIGHT -->
       <div class="q-pr-md">
-        <q-avatar size="40px">
+        <!-- <q-toggle
+          v-model="toggle"
+          size="sm"
+        /> -->
+        <q-avatar
+          size="40px"
+          class="q-ml-md"
+        >
           <img src="https://cdn.quasar.dev/img/avatar.png">
         </q-avatar>
       </div>

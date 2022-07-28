@@ -14,6 +14,7 @@ export default defineComponent({
     const $q = useQuasar()
     // console.log($q.dark.isActive)
     $q.iconSet.set(customIcons)
+    document.body.setAttribute(['data-theme'], 'custom')
   }
 })
 </script>
