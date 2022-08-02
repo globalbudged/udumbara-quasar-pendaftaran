@@ -11,6 +11,16 @@ const routes = [
     ]
   },
 
+  // login
+  {
+    path: '/login',
+    component: () => import('layouts/Auth/AuthLayout.vue'),
+    meta: { requireAuth: false },
+    children: [
+      { path: '', component: () => import('pages/auth/AuthPage.vue') }
+    ]
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -47,11 +47,13 @@
 
 <script setup>
 import { useQuasar } from 'quasar'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 import LeftDrawer from './LeftDrawer.vue'
 import AdmHeader from './AdmHeader.vue'
+import { useAuthStore } from 'src/stores/auth'
 
+const store = useAuthStore()
 const leftDrawerOpen = ref(false)
 const rightDrawerOpen = ref(false)
 const $q = useQuasar()
@@ -60,18 +62,18 @@ const dark = computed(() => {
   return $q.dark.isActive
 })
 
-console.log(dark)
-
 function setDark(val) {
   const x = !val
   $q.dark.set(x)
 }
 
-setDark(true)
-
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
+
+onMounted(() => {
+  store.getUser()
+})
 
 // function toggleRightDrawer() {
 //   rightDrawerOpen.value = !rightDrawerOpen.value

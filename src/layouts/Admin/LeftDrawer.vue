@@ -4,7 +4,7 @@
     :width="70"
   >
     <!-- logo -->
-    <div class="absolute-top bg-primary">
+    <div class="absolute-top">
       <div
         class=" flex flex-center"
         style="height: 60px;"

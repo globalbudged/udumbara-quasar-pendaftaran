@@ -13,6 +13,7 @@ export default defineComponent({
   setup() {
     const $q = useQuasar()
     // console.log($q.dark.isActive)
+    $q.dark.set(false)
     $q.iconSet.set(customIcons)
     document.body.setAttribute(['data-theme'], 'custom')
   }
